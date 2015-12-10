@@ -1,0 +1,37 @@
+body {
+    background-color: #444;
+    margin: 0;
+}    
+#wrapper {
+     width: 605px;
+     margin: 0 auto;
+}
+#leftcolumn, #rightcolumn {
+    border: 1px solid white;
+    float: left;
+    min-height: 450px;
+    color: white;
+}
+#leftcolumn {
+     width: 250px;
+     background-color: #111;
+}
+#rightcolumn {
+     width: 350px;
+     background-color: #777;
+}
+
+span
+{
+color:white;
+}
+
+a
+{
+    color:white;
+}
+
+a:visited
+{
+color:#ff00ff;
+}

@@ -1,0 +1,4 @@
+AuthType Basic  
+AuthName "restricted area"  
+AuthUserFile /home/eorndahl1/public_html/iShop/admin/.htpasswd  
+Require valid-user

@@ -1,0 +1,59 @@
+<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="admin.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#addInventory").hide();
+    $("#deleteInventory").hide();
+
+    $("#inventory").click(function(){
+        $("#addInventory").toggle();
+    });
+
+    $("#delete_inventory").click(function(){
+        $("#deleteInventory").toggle();
+          $.ajax({
+            url: "get_inventory.php",
+            success: function(resultOfAjaxCall) 
+            {
+                $("#rightcolumn").html(resultOfAjaxCall);
+            }
+            });
+    });
+
+});
+</script>
+</head>
+
+<div id="wrapper">
+    <div id="leftcolumn">
+        <table>
+<tr><td><button id = "inventory">Add Inventory</button></td></tr>
+<tr><td><button id = "delete inventory">Delete Inventory</button></td></tr>
+<tr><td><button id = "edit inventory">Add Inventory</button></td></tr>
+
+</table>
+
+<div id ="addInventory">  
+<form method="post" action= "new_inventory.php">
+  <span>Description:</span><br>
+  <input type="text" name="description"> <br>
+  <span>Price:<br></span>
+  <input type="text" name="price"> <br>
+  <input type="submit" value="Submit">
+</form> 
+</div>
+
+<div id ="deleteInventory">  
+ <form method="post" action= "inventory_delete.php">
+  <span>Item ID:</span><br>
+  <input type="text" name="id"> <br>
+  <input type="submit" value="Submit">
+</form> 
+</div>
+    </div>
+    <div id="rightcolumn">
+    </div>
+</div>
