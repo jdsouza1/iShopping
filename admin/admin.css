@@ -1,0 +1,57 @@
+body {
+    background-color: #444;
+    margin: 0;
+} 
+
+h1 {
+    color:white;
+    font-size: 50;
+    text-align: center;
+}
+
+div.scrollingDiv
+{
+   overflow:scroll;
+}
+
+.centerText{
+   text-align: center;
+}
+
+#wrapper {
+     position: relative;
+     top: 10%;
+     width: 605px;
+     margin: 0 auto;
+}
+#leftcolumn, #rightcolumn {
+    border: 1px solid white;
+    float: left;
+    height : 500px;
+    color: white;
+}
+#leftcolumn {
+     width: 250px;
+     background-color: #111;
+}
+#rightcolumn {
+     overflow-y: auto;
+     width: 350px;
+     height : 500px;
+     background-color: #777;
+}
+
+span
+{
+color:white;
+}
+
+a
+{
+    color:white;
+}
+
+a:visited
+{
+color:#ff00ff;
+}
