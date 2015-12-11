@@ -1,0 +1,53 @@
+html, body {
+	height: 100%;
+	overflow: hidden;
+}
+body {
+	font-size: 115%;
+	font-weight: bold;
+	font-family: Verdana;
+	background: url("warehouse.jpg") no-repeat;
+	background-size: cover;
+}
+input[type="text"], input[type="password"]{
+	font-size: 100%;
+	width: 100%;
+}
+input[type="submit"]{
+	font-size: 100%;
+	float: right;
+}
+form, table {
+	display: inline-table;
+	margin: 0;
+	padding: 0;
+}
+a {
+	font-size: 70%;
+	float: right;
+}
+table td:nth-child(odd) {
+	text-align: right;
+	width: 35%;
+}
+#mainForm {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	padding: 30px;
+	position: absolute;
+	border: 2px #000000 solid;
+	border-radius: 30px;
+	background: #FFFFFF;
+	animation: mainAnimation .8s ease-in-out;
+}
+@keyframes mainAnimation {
+	0% {
+		transform: translate(-400px, -50%);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(-50%, -50%);
+		opacity: 1;
+	}
+}
