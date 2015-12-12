@@ -11,7 +11,7 @@
 	
 	<body>
 		<div id="mainForm">
-			<form action="register.php" method="post">
+			<form id="registrationForm" action="register.php" method="post">
 				<table>
 					<tr>
 						<td>
@@ -47,7 +47,7 @@
 					</tr>
 					<tr>
 						<td>
-							Comfirm Password:
+							Confirm:
 						</td>
 						<td>
 							<input type="password" name="confirm" />
@@ -56,11 +56,35 @@
 				</table>
 				<br/>
 				<br/>
-				<input type="submit" />
+				<input type="button" value="Submit" onclick="trySubmit()" />
 				<br/>
 				<br/>
 				<a href="login.html">Go back</a>
 			</form>
 		</div>
+		<script>
+			function trySubmit() {
+				var email = document.getElementsByName("email")[0].value.trim();
+				var firstName = document.getElementsByName("firstName")[0].value.trim();
+				var lastName = document.getElementsByName("lastName")[0].value.trim();
+				var password = document.getElementsByName("password")[0].value;
+				var confirm = document.getElementsByName("confirm")[0].value;
+				if (email.length == 0 || firstName.length == 0 || lastName.length == 0 || password.length == 0 || confirm.length == 0) {
+					alert("Please fill in all fields!");
+					return;
+				}
+				if (confirm == password) {
+					if (!email.match(".+@.+(\\..+)+$")) {
+						alert("Invalid email! ");
+						return;
+					} else {
+						document.getElementById("registrationForm").submit();
+					}
+				} else {
+					alert("Password and Confirmation don't match!");
+					return;
+				}
+			}
+		</script>
 	</body>
 </html>
